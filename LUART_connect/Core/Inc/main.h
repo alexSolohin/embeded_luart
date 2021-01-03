@@ -42,7 +42,8 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-char str[100];
+char 	str[100];
+uint32_t	led_on;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

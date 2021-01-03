@@ -58,6 +58,7 @@
 /* External variables --------------------------------------------------------*/
 extern UART_HandleTypeDef hlpuart1;
 extern UART_HandleTypeDef huart1;
+extern TIM_HandleTypeDef htim1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -199,6 +200,31 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32wbxx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles TIM1 update interrupt and TIM16 global interrupt.
+  */
+void TIM1_UP_TIM16_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 0 */
+	if (led_on == 0)
+	{
+		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+	}
+	else if (led_on == 1)
+	{
+		HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+	}
+	else
+	{
+		HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+	}
+  /* USER CODE END TIM1_UP_TIM16_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim1);
+  /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 1 */
+
+  /* USER CODE END TIM1_UP_TIM16_IRQn 1 */
+}
 
 /**
   * @brief This function handles USART1 global interrupt.

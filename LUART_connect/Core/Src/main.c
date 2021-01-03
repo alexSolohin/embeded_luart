@@ -44,10 +44,12 @@
 UART_HandleTypeDef hlpuart1;
 UART_HandleTypeDef huart1;
 
+TIM_HandleTypeDef htim1;
+
 PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
-uint32_t time;
+uint32_t period = 50000;
 
 /* USER CODE END PV */
 
@@ -57,6 +59,7 @@ static void MX_GPIO_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USB_PCD_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 typedef struct
 {
@@ -69,16 +72,14 @@ typedef struct
 /* USER CODE BEGIN 0 */
 void	cmd1_led(uint32_t ptr)
 {
-	HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
-	if (HAL_GetTick() - time <= ptr)
-	{
-		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
-	}
+	led_on = ptr;
+	HAL_TIM_Base_Start_IT(&htim1);
 }
 
 void	cmd2_led(uint32_t ptr)
 {
-	HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+	HAL_TIM_Base_Stop_IT(&htim1);
+	HAL_GPIO_WritePin(GPIOB, LD2_Pin|LD3_Pin|LD1_Pin, GPIO_PIN_RESET);
 }
 /* USER CODE END 0 */
 
@@ -113,7 +114,10 @@ int main(void)
   MX_LPUART1_UART_Init();
   MX_USART1_UART_Init();
   MX_USB_PCD_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
+
+//  HAL_UART_Transmit_IT(&hlpuart1, "Ok\n", strlen("Ok\n"));
   HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
   /* USER CODE END 2 */
 
@@ -126,19 +130,18 @@ int main(void)
   char *str3;
   const comand_node_t *point;
   uint8_t flag;
-  time = HAL_GetTick();
   while (1)
   {
 	  if ((str1 = strstr(str, "CMD+")) != NULL)
 	  {
 		  if ((str2 = strstr(str1, "+END")) != NULL)
 		  {
-			  str2 = '\0';
+			  *(str2) = '\0';
 			  flag = 0;
 			  for (uint8_t i = 0; i < sizeof(command_name) / sizeof(command_name[0]); i++)
 			  {
 				  point = &command_name[i];
-				  if (str3 = strstr(str1, point->name) != NULL)
+				  if ((str3 = strstr(str1, point->name)) != NULL)
 				  {
 					  ptr = (uint32_t)atoi(str3 + strlen(point->name) + 1);
 					  if (point->p_func != NULL)
@@ -349,6 +352,60 @@ static void MX_USART1_UART_Init(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 319;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = period;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sBreakDeadTimeConfig.BreakAFMode = TIM_BREAK_AFMODE_INPUT;
+  sBreakDeadTimeConfig.Break2AFMode = TIM_BREAK_AFMODE_INPUT;
+  if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
   * @brief USB Initialization Function
   * @param None
   * @retval None
@@ -421,7 +478,18 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  /* Prevent unused argument(s) compilation warning */
+	HAL_UART_DeInit(&huart1);
+	HAL_UART_Init(&huart1);
+	HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
+  UNUSED(huart1);
 
+  /* NOTE : This function should not be modified, when the callback is needed,
+            the HAL_UART_RxCpltCallback can be implemented in the user file.
+   */
+}
 /* USER CODE END 4 */
 
 /**
