@@ -118,7 +118,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 //  HAL_UART_Transmit_IT(&hlpuart1, "Ok\n", strlen("Ok\n"));
-  HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
+  HAL_UART_Receive_IT(&hlpuart1, str, strlen(str) - 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,42 +130,52 @@ int main(void)
   char *str3;
   const comand_node_t *point;
   uint8_t flag;
+  uint32_t next_byte = 0;
+  uint32_t Rx_Num_of_Bytes;
+  uint32_t Processed_Rx_Bytes = 0;
   while (1)
   {
-	  if ((str1 = strstr(str, "CMD+")) != NULL)
-	  {
-		  if ((str2 = strstr(str1, "+END")) != NULL)
+	  Rx_Num_of_Bytes = hlpuart1.RxXferSize - hlpuart1.RxXferCount;
+
+		  Processed_Rx_Bytes = Rx_Num_of_Bytes;
+		  for (uint8_t idx = 0; idx < Processed_Rx_Bytes; idx++)
 		  {
-			  *(str2) = '\0';
-			  flag = 0;
-			  for (uint8_t i = 0; i < sizeof(command_name) / sizeof(command_name[0]); i++)
+			  if ((str1 = strstr(&str[idx], "CMD+")) != NULL)
 			  {
-				  point = &command_name[i];
-				  if ((str3 = strstr(str1, point->name)) != NULL)
+				  if ((str2 = strstr(str1, "+END")) != NULL)
 				  {
-					  ptr = (uint32_t)atoi(str3 + strlen(point->name) + 1);
-					  if (point->p_func != NULL)
+					  *(str2) = '\0';
+					  flag = 0;
+					  for (uint8_t i = 0; i < sizeof(command_name) / sizeof(command_name[0]); i++)
 					  {
-						  point->p_func(ptr);
+						  point = &command_name[i];
+						  if ((str3 = strstr(str1, point->name)) != NULL)
+						  {
+							  ptr = (uint32_t)atoi(str3 + strlen(point->name) + 1);
+							  if (point->p_func != NULL)
+							  {
+								  point->p_func(ptr);
+							  }
+							  flag = 1;
+							  break ;
+						  }
 					  }
-					  flag = 1;
-					  break ;
+					  memset(str, 0x00, sizeof(str));
+					  HAL_UART_DeInit(&hlpuart1);
+					  HAL_UART_Init(&hlpuart1);
+					  HAL_UART_Receive_IT(&hlpuart1, str, sizeof(str) - 1);
+					  if (flag == 1)
+					  {
+						  HAL_UART_Transmit_IT(&hlpuart1, "Ok\n", strlen("Ok\n"));
+					  }
+					  else
+					  {
+						  HAL_UART_Transmit_IT(&hlpuart1, "No command\n", strlen("No command\n"));
+					  }
 				  }
 			  }
-			  memset(str, 0x00, sizeof(str));
-			  HAL_UART_DeInit(&huart1);
-			  HAL_UART_Init(&huart1);
-			  HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
-			  if (flag == 1)
-			  {
-				  HAL_UART_Transmit_IT(&huart1, "Ok\n", strlen("Ok\n"));
-			  }
-			  else
-			  {
-				  HAL_UART_Transmit_IT(&huart1, "No command\n", strlen("No command\n"));
-			  }
 		  }
-	  }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -481,10 +491,10 @@ static void MX_GPIO_Init(void)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   /* Prevent unused argument(s) compilation warning */
-	HAL_UART_DeInit(&huart1);
-	HAL_UART_Init(&huart1);
-	HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
-  UNUSED(huart1);
+	HAL_UART_DeInit(&hlpuart1);
+	HAL_UART_Init(&hlpuart1);
+	HAL_UART_Receive_IT(&hlpuart1, str, sizeof(str) - 1);
+  UNUSED(hlpuart1);
 
   /* NOTE : This function should not be modified, when the callback is needed,
             the HAL_UART_RxCpltCallback can be implemented in the user file.
