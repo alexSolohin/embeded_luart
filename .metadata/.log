@@ -1,0 +1,84 @@
+!SESSION 2021-01-03 10:22:21.710 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_272
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ru_RU
+Framework arguments:  -keyring /Users/alex/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/alex/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-01-03 10:22:45.346
+!MESSAGE Log4j initialized with config file /Users/alex/Desktop/LUART_connect/.metadata/.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2021-01-03 10:22:46.003
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 0 2021-01-03 10:22:47.617
+!MESSAGE Illegal character in path at index 31: file:/Applications/STM32CubeIDE 2.app/Contents/Eclipse/configuration/com.st.stm32cube.ide.mcu.ide
+!STACK 0
+java.net.URISyntaxException: Illegal character in path at index 31: file:/Applications/STM32CubeIDE 2.app/Contents/Eclipse/configuration/com.st.stm32cube.ide.mcu.ide
+	at java.net.URI$Parser.fail(URI.java:2848)
+	at java.net.URI$Parser.checkChars(URI.java:3021)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3105)
+	at java.net.URI$Parser.parse(URI.java:3053)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URL.toURI(URL.java:964)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCUMacRegistry.installRegistryImpl(MCUMacRegistry.java:125)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCUMacRegistry.installDotCProjetRegistry(MCUMacRegistry.java:53)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCURegistry.installRegistry(MCURegistry.java:59)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporterStartup.earlyStartup(MCUProjectImporterStartup.java:53)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$40.run(Workbench.java:2701)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-01-03 10:22:47.663
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-01-03 10:22:48.120
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-01-03 10:23:48.389
+!MESSAGE Indexed 'LUART_connect' (26 sources, 92 headers) in 4.26 sec: 7,882 declarations; 41,426 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0041%)
+!SESSION 2021-01-03 11:11:19.778 -----------------------------------------------
+eclipse.buildId=Version 1.5.0
+java.version=1.8.0_272
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ru_RU
+Framework arguments:  -keyring /Users/alex/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/alex/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-01-03 11:11:36.048
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-01-03 11:11:39.309
+!MESSAGE Log4j initialized with config file /Users/alex/Desktop/LUART_connect/.metadata/.log4j.xml
+
+!ENTRY org.eclipse.core.net 1 0 2021-01-03 11:11:40.157
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 0 2021-01-03 11:11:45.073
+!MESSAGE Illegal character in path at index 31: file:/Applications/STM32CubeIDE 2.app/Contents/Eclipse/configuration/com.st.stm32cube.ide.mcu.ide
+!STACK 0
+java.net.URISyntaxException: Illegal character in path at index 31: file:/Applications/STM32CubeIDE 2.app/Contents/Eclipse/configuration/com.st.stm32cube.ide.mcu.ide
+	at java.net.URI$Parser.fail(URI.java:2848)
+	at java.net.URI$Parser.checkChars(URI.java:3021)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3105)
+	at java.net.URI$Parser.parse(URI.java:3053)
+	at java.net.URI.<init>(URI.java:588)
+	at java.net.URL.toURI(URL.java:964)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCUMacRegistry.installRegistryImpl(MCUMacRegistry.java:125)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCUMacRegistry.installDotCProjetRegistry(MCUMacRegistry.java:53)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.registry.internal.MCURegistry.installRegistry(MCURegistry.java:59)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporterStartup.earlyStartup(MCUProjectImporterStartup.java:53)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$40.run(Workbench.java:2701)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-01-03 11:11:45.146
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-01-03 11:11:45.581
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties

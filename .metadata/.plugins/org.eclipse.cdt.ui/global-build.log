@@ -1,0 +1,78 @@
+11:28:40 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:117:32: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive_IT' differ in signedness [-Wpointer-sign]
+   HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
+                                ^~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:319:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:1564:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:141:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+       if (str3 = strstr(str1, point->name) != NULL)
+                ^
+../Core/Src/main.c:141:11: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+       if (str3 = strstr(str1, point->name) != NULL)
+           ^~~~
+../Core/Src/main.c:155:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive_IT' differ in signedness [-Wpointer-sign]
+      HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
+                                   ^~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:319:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:1564:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:158:37: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+       HAL_UART_Transmit_IT(&huart1, "Ok\n", strlen("Ok\n"));
+                                     ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:319:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:1563:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:162:37: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+       HAL_UART_Transmit_IT(&huart1, "No command\n", strlen("No command\n"));
+                                     ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:319:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:1563:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LUART_connect.elf
+ 
+arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
+arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20780	    484	   2584	  23848	   5d28	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+Finished building: LUART_connect.bin
+ 
+Finished building: LUART_connect.list
+ 
+11:28:43 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20780	    484	   2584	  23848	   5d28	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+11:28:49 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20780	    484	   2584	  23848	   5d28	LUART_connect.elf
+Finished building: default.size.stdout
+ 
