@@ -1,10 +1,10 @@
-12:31:40 **** Incremental Build of configuration Debug for project LUART_connect ****
+14:07:10 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27236	    488	   2740	  30464	   7700	LUART_connect.elf
 Finished building: default.size.stdout
  
 
-12:31:42 Build Finished. 0 errors, 0 warnings. (took 1s.924ms)
+14:07:11 Build Finished. 0 errors, 0 warnings. (took 896ms)
 

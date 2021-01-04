@@ -60,6 +60,7 @@ TIM_HandleTypeDef htim1;
 PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
+uint32_t time;
 uint32_t period = SLOW_PERIOD;
 const comand_node_t command_name[2] = 	{{"CMD1", cmd1_led},
 										{"CMD2", cmd2_led}};
@@ -92,7 +93,7 @@ typedef struct
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void	parse_to_func(UART_HandleTypeDef *huart, parse_t *parse)
+void	parse_UART_to_func(UART_HandleTypeDef *huart, parse_t *parse)
 {
 	parse->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
 	parse->Processed_Rx_Bytes = parse->Rx_Num_of_Bytes;
@@ -135,6 +136,49 @@ void	parse_to_func(UART_HandleTypeDef *huart, parse_t *parse)
 	}
 }
 
+void	parse_I2C_to_func(I2C_HandleTypeDef *i2c, parse_t *parse)
+{
+//	parse->Rx_Num_of_Bytes = i2c->XferSize - i2c->XferCount;
+//	parse->Processed_Rx_Bytes = parse->Rx_Num_of_Bytes;
+//	for (uint8_t idx = 0; idx < parse->Processed_Rx_Bytes; idx++)
+//	{
+		if ((parse->str1 = strstr(str, "CMD+")) != NULL)
+		{
+			if ((parse->str2 = strstr(parse->str1, "+END")) != NULL)
+			{
+				*(parse->str2) = '\0';
+				parse->flag = 0;
+				for (uint8_t i = 0; i < sizeof(command_name) / sizeof(command_name[0]); i++)
+				{
+					parse->point = &command_name[i];
+					if ((parse->str3 = strstr(parse->str1, parse->point->name)) != NULL)
+					{
+						parse->ptr = (uint32_t)atoi(parse->str3 + strlen(parse->point->name) + 1);
+						if (parse->point->p_func != NULL)
+						{
+							parse->point->p_func(parse->ptr);
+						}
+						parse->flag = 1;
+						break ;
+					}
+				}
+				memset(str, 0x00, sizeof(str));
+				HAL_I2C_DeInit(i2c);
+				HAL_I2C_Init(i2c);
+				HAL_I2C_Slave_Receive(i2c, (uint8_t*)str, strlen(str) - 1, 10000);
+				if (parse->flag == 1)
+				{
+					HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+				}
+				else
+				{
+					HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+				}
+			}
+		}
+//	}
+}
+
 void	cmd1_led(uint32_t ptr)
 {
 	led_on = ptr;
@@ -145,6 +189,11 @@ void	cmd2_led(uint32_t ptr)
 {
 	HAL_TIM_Base_Stop_IT(&htim1);
 	HAL_GPIO_WritePin(GPIOB, LD2_Pin|LD3_Pin|LD1_Pin, GPIO_PIN_RESET);
+}
+
+void	cmd3_led(uint32_t ptr)
+{
+
 }
 /* USER CODE END 0 */
 
@@ -182,33 +231,35 @@ int main(void)
   MX_TIM1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+  time = HAL_GetTick();
 //  HAL_UART_Transmit_IT(&hlpuart1, "asd\n", strlen("asd\n"));
 //  HAL_UART_Receive_IT(&huart1, (uint8_t*)str, strlen(str) - 1);
-  uint8_t flag = 0;
-  if ((HAL_I2C_Slave_Receive(&hi2c1, (uint8_t*)str, 2, 10000)) != HAL_OK)
+  uint8_t ptr = 0;
+  if ((HAL_I2C_Slave_Receive(&hi2c1, (uint8_t*)str, strlen(str) - 1, 10000)) != HAL_OK)
   {
-	  flag = 1;
+	  ptr = 1;
   }
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  parse_t parse;
-  parse.next_byte = 0;
-  parse.Processed_Rx_Bytes = 0;
-  uint8_t ptr = 0x01;
+  parse_t parse1;
+  parse1.next_byte = 0;
+  parse1.Processed_Rx_Bytes = 0;
+  parse_t parse2;
+  parse2.next_byte = 0;
+  parse2.Processed_Rx_Bytes = 0;
+  char str1[] = "CMD+";
   while (1)
   {
-	 //parse_to_func(&huart1, &parse);
-	  if (str[0] == 0x50 && flag)
+	 //parse_UART_to_func(&huart1, &parse1);
+	  if (ptr)
 	  {
-		  if ((HAL_I2C_Slave_Transmit(&hi2c1, &ptr, 1, 10000)) != HAL_OK)
-		  {
-			  flag = 0;
-		  }
+		  HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
 	  }
+	  parse_I2C_to_func(&hi2c1, &parse2);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -462,9 +513,9 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 0;
+  htim1.Init.Prescaler = 319;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 65535;
+  htim1.Init.Period = period;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;

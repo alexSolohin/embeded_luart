@@ -1,85 +1,37 @@
-11:12:28 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:36:01 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  29760	    484	   2736	  32980	   80d4	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.bin
- 
-Finished building: LUART_connect.list
- 
-11:15:04 **** Incremental Build of configuration Debug for project LUART_connect ****
-make -j7 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-Finished building: LUART_connect.bin
- 
-   text	   data	    bss	    dec	    hex	filename
-  29444	    484	   2736	  32664	   7f98	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.list
- 
-11:17:48 **** Incremental Build of configuration Debug for project LUART_connect ****
-make -j7 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  29432	    484	   2736	  32652	   7f8c	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.bin
- 
-Finished building: LUART_connect.list
- 
-11:32:13 **** Incremental Build of configuration Debug for project LUART_connect ****
-make -j7 all 
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  29432	    484	   2736	  32652	   7f8c	LUART_connect.elf
-Finished building: default.size.stdout
- 
-11:47:17 **** Incremental Build of configuration Debug for project LUART_connect ****
-make -j7 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  29432	    484	   2736	  32652	   7f8c	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.bin
- 
-Finished building: LUART_connect.list
- 
-11:48:14 **** Incremental Build of configuration Debug for project LUART_connect ****
-make -j7 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+../Core/Src/main.c:230:11: warning: unused variable 'flag' [-Wunused-variable]
+   uint8_t flag = 0;
+           ^~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -87,20 +39,44 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
+  27228	    484	   2736	  30448	   76f0	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:03:25 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:36:40 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -108,41 +84,108 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
+  27220	    484	   2736	  30440	   76e8	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:07:54 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:38:56 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.bin
- 
-Finished building: LUART_connect.list
- 
-12:09:38 **** Incremental Build of configuration Debug for project LUART_connect ****
+../Core/Src/main.c:246:27: error: 'i2c' undeclared (first use in this function); did you mean 'hi2c1'?
+    HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                           ^~~
+                           hi2c1
+../Core/Src/main.c:246:27: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:246:32: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:239:11: warning: variable 'parse2' set but not used [-Wunused-but-set-variable]
+   parse_t parse2;
+           ^~~~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+13:39:17 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:246:35: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(&hi2c1, "OK\n", 3, 10000);
+                                   ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:239:11: warning: variable 'parse2' set but not used [-Wunused-but-set-variable]
+   parse_t parse2;
+           ^~~~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -150,41 +193,107 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
+  25072	     20	   2736	  27828	   6cb4	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:10:42 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:40:19 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:144:34: error: 'idx' undeclared (first use in this function)
+   if ((parse->str1 = strstr(&str[idx], "CMD+")) != NULL)
+                                  ^~~
+../Core/Src/main.c:144:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
-arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LUART_connect.elf
- 
-arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
-arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
-arm-none-eabi-size   LUART_connect.elf 
-   text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
-Finished building: default.size.stdout
- 
-Finished building: LUART_connect.bin
- 
-Finished building: LUART_connect.list
- 
-12:13:08 **** Incremental Build of configuration Debug for project LUART_connect ****
+../Core/Src/main.c:246:35: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(&hi2c1, "OK\n", 3, 10000);
+                                   ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:239:11: warning: variable 'parse2' set but not used [-Wunused-but-set-variable]
+   parse_t parse2;
+           ^~~~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+13:40:52 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:194:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:246:35: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(&hi2c1, "OK\n", 3, 10000);
+                                   ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:239:11: warning: variable 'parse2' set but not used [-Wunused-but-set-variable]
+   parse_t parse2;
+           ^~~~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -192,20 +301,44 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  24956	     20	   2736	  27712	   6c40	LUART_connect.elf
+  25072	     20	   2736	  27828	   6cb4	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:18:58 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:41:17 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:198:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -213,20 +346,54 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  24996	     20	   2736	  27752	   6c68	LUART_connect.elf
+  27160	    484	   2736	  30380	   76ac	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:22:35 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:42:33 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:198:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:246:35: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 3, 10000);
+                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -234,20 +401,54 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27192	    484	   2736	  30412	   76cc	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:23:32 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:43:30 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:198:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:246:35: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+    HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:242:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:236:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -255,20 +456,54 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27192	    484	   2736	  30412	   76cc	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:30:31 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:48:26 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:198:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:251:36: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+     HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                    ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:245:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:239:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -276,20 +511,54 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27216	    484	   2736	  30436	   76e4	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:31:25 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:53:40 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:170:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:198:11: warning: variable 'parse' set but not used [-Wunused-but-set-variable]
-   parse_t parse;
-           ^~~~~
+../Core/Src/main.c:257:36: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+     HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                    ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:251:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:245:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
 arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LUART_connect.elf
  
@@ -297,17 +566,209 @@ arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
 arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27220	    488	   2732	  30440	   76e8	LUART_connect.elf
 Finished building: default.size.stdout
  
 Finished building: LUART_connect.bin
  
 Finished building: LUART_connect.list
  
-12:31:40 **** Incremental Build of configuration Debug for project LUART_connect ****
+13:59:24 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:171:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:175:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'cmd1_led':
+../Core/Src/main.c:184:11: error: 'ptr' redeclared as different kind of symbol
+  uint32_t ptr = HAL_GetTick();
+           ^~~
+../Core/Src/main.c:182:24: note: previous definition of 'ptr' was here
+ void cmd1_led(uint32_t ptr)
+                        ^~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:36: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+     HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                    ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:257:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:251:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+14:00:31 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:171:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:175:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:36: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+     HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                    ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:257:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:251:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LUART_connect.elf
+ 
+arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
+arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27264	    488	   2740	  30492	   771c	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+Finished building: LUART_connect.bin
+ 
+Finished building: LUART_connect.list
+ 
+14:03:16 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32wbxx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32wbxx_it.d" -MT"Core/Src/stm32wbxx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32wbxx_it.o"
+../Core/Src/main.c: In function 'parse_I2C_to_func':
+../Core/Src/main.c:171:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "OK\n", 3, 10000);
+                                  ^~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:175:34: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+      HAL_I2C_Slave_Transmit(i2c, "No Command\n", strlen("No Command"), 10000);
+                                  ^~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:258:36: warning: pointer targets in passing argument 2 of 'HAL_I2C_Slave_Transmit' differ in signedness [-Wpointer-sign]
+     HAL_I2C_Slave_Transmit(&hi2c1, "CONNECT\n", 7, 10000);
+                                    ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32wbxx_hal_conf.h:243:0,
+                 from ../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h:603:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_I2C_Slave_Transmit(I2C_HandleTypeDef *hi2c, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:252:8: warning: unused variable 'str1' [-Wunused-variable]
+   char str1[] = "CMD+";
+        ^~~~
+../Core/Src/main.c:246:11: warning: variable 'parse1' set but not used [-Wunused-but-set-variable]
+   parse_t parse1;
+           ^~~~~~
+arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LUART_connect.elf
+ 
+arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
+arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27268	    488	   2740	  30496	   7720	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+Finished building: LUART_connect.bin
+ 
+Finished building: LUART_connect.list
+ 
+14:03:49 **** Incremental Build of configuration Debug for project LUART_connect ****
 make -j7 all 
 arm-none-eabi-size   LUART_connect.elf 
    text	   data	    bss	    dec	    hex	filename
-  25000	     20	   2736	  27756	   6c6c	LUART_connect.elf
+  27268	    488	   2740	  30496	   7720	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+14:06:06 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/stm32wbxx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32wbxx_it.d" -MT"Core/Src/stm32wbxx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32wbxx_it.o"
+arm-none-eabi-gcc -o "LUART_connect.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alex/Desktop/LUART_connect/LUART_connect/STM32WB55RGVX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LUART_connect.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LUART_connect.elf
+ 
+arm-none-eabi-objdump -h -S  LUART_connect.elf  > "LUART_connect.list"
+arm-none-eabi-objcopy  -O binary  LUART_connect.elf  "LUART_connect.bin"
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27236	    488	   2740	  30464	   7700	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+Finished building: LUART_connect.bin
+ 
+Finished building: LUART_connect.list
+ 
+14:07:04 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27236	    488	   2740	  30464	   7700	LUART_connect.elf
+Finished building: default.size.stdout
+ 
+14:07:10 **** Incremental Build of configuration Debug for project LUART_connect ****
+make -j7 all 
+arm-none-eabi-size   LUART_connect.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27236	    488	   2740	  30464	   7700	LUART_connect.elf
 Finished building: default.size.stdout
  
