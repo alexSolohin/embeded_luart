@@ -69,7 +69,6 @@ static void MX_USB_PCD_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 
-
 typedef struct
 {
 	char				*str1;
@@ -82,34 +81,34 @@ typedef struct
 	uint32_t 			Processed_Rx_Bytes;
 	const comand_node_t *point;
 
-}						parce_t;
+}						parse_t;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
+void	parse_to_func(UART_HandleTypeDef *huart, parse_t *parse)
 {
-	parce->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
-	parce->Processed_Rx_Bytes = parce->Rx_Num_of_Bytes;
-	for (uint8_t idx = 0; idx < parce->Processed_Rx_Bytes; idx++)
+	parse->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
+	parse->Processed_Rx_Bytes = parse->Rx_Num_of_Bytes;
+	for (uint8_t idx = 0; idx < parse->Processed_Rx_Bytes; idx++)
 	{
-		if ((parce->str1 = strstr(&str[idx], "CMD+")) != NULL)
+		if ((parse->str1 = strstr(&str[idx], "CMD+")) != NULL)
 		{
-			if ((parce->str2 = strstr(parce->str1, "+END")) != NULL)
+			if ((parse->str2 = strstr(parse->str1, "+END")) != NULL)
 			{
-				*(parce->str2) = '\0';
-				parce->flag = 0;
+				*(parse->str2) = '\0';
+				parse->flag = 0;
 				for (uint8_t i = 0; i < sizeof(command_name) / sizeof(command_name[0]); i++)
 				{
-					parce->point = &command_name[i];
-					if ((parce->str3 = strstr(parce->str1, parce->point->name)) != NULL)
+					parse->point = &command_name[i];
+					if ((parse->str3 = strstr(parse->str1, parse->point->name)) != NULL)
 					{
-						parce->ptr = (uint32_t)atoi(parce->str3 + strlen(parce->point->name) + 1);
-						if (parce->point->p_func != NULL)
+						parse->ptr = (uint32_t)atoi(parse->str3 + strlen(parse->point->name) + 1);
+						if (parse->point->p_func != NULL)
 						{
-						  parce->point->p_func(parce->ptr);
+						  parse->point->p_func(parse->ptr);
 						}
-						parce->flag = 1;
+						parse->flag = 1;
 						break ;
 					}
 				}
@@ -117,7 +116,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
 				HAL_UART_DeInit(huart);
 				HAL_UART_Init(huart);
 				HAL_UART_Receive_IT(huart, (uint8_t*)str, sizeof(str) - 1);
-				if (parce->flag == 1)
+				if (parse->flag == 1)
 				{
 				  HAL_UART_Transmit_IT(huart, (uint8_t*)"Ok\n", strlen("Ok\n"));
 				}
@@ -183,12 +182,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  parce_t parce;
-  parce.next_byte = 0;
-  parce.Processed_Rx_Bytes = 0;
+  parse_t parse;
+  parse.next_byte = 0;
+  parse.Processed_Rx_Bytes = 0;
   while (1)
   {
-	 parse_to_func(&huart1, &parce);
+	 parse_to_func(&huart1, &parse);
 
     /* USER CODE END WHILE */
 

@@ -425,14 +425,14 @@ __STATIC_INLINE void LL_AHB2_GRP1_EnableClock(uint32_t Periphs)
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
+void	parse_to_func(UART_HandleTypeDef *huart, parse_t *parse)
 {
  80004ec:	b590      	push	{r4, r7, lr}
  80004ee:	b085      	sub	sp, #20
  80004f0:	af00      	add	r7, sp, #0
  80004f2:	6078      	str	r0, [r7, #4]
  80004f4:	6039      	str	r1, [r7, #0]
-	parce->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
+	parse->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
  80004f6:	687b      	ldr	r3, [r7, #4]
  80004f8:	f8b3 305c 	ldrh.w	r3, [r3, #92]	; 0x5c
  80004fc:	461a      	mov	r2, r3
@@ -443,17 +443,17 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  8000508:	461a      	mov	r2, r3
  800050a:	683b      	ldr	r3, [r7, #0]
  800050c:	619a      	str	r2, [r3, #24]
-	parce->Processed_Rx_Bytes = parce->Rx_Num_of_Bytes;
+	parse->Processed_Rx_Bytes = parse->Rx_Num_of_Bytes;
  800050e:	683b      	ldr	r3, [r7, #0]
  8000510:	699a      	ldr	r2, [r3, #24]
  8000512:	683b      	ldr	r3, [r7, #0]
  8000514:	61da      	str	r2, [r3, #28]
-	for (uint8_t idx = 0; idx < parce->Processed_Rx_Bytes; idx++)
+	for (uint8_t idx = 0; idx < parse->Processed_Rx_Bytes; idx++)
  8000516:	2300      	movs	r3, #0
  8000518:	73fb      	strb	r3, [r7, #15]
  800051a:	e084      	b.n	8000626 <parse_to_func+0x13a>
 	{
-		if ((parce->str1 = strstr(&str[idx], "CMD+")) != NULL)
+		if ((parse->str1 = strstr(&str[idx], "CMD+")) != NULL)
  800051c:	7bfb      	ldrb	r3, [r7, #15]
  800051e:	4a47      	ldr	r2, [pc, #284]	; (800063c <parse_to_func+0x150>)
  8000520:	4413      	add	r3, r2
@@ -468,7 +468,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  8000534:	2b00      	cmp	r3, #0
  8000536:	d073      	beq.n	8000620 <parse_to_func+0x134>
 		{
-			if ((parce->str2 = strstr(parce->str1, "+END")) != NULL)
+			if ((parse->str2 = strstr(parse->str1, "+END")) != NULL)
  8000538:	683b      	ldr	r3, [r7, #0]
  800053a:	681b      	ldr	r3, [r3, #0]
  800053c:	4941      	ldr	r1, [pc, #260]	; (8000644 <parse_to_func+0x158>)
@@ -482,12 +482,12 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  800054e:	2b00      	cmp	r3, #0
  8000550:	d066      	beq.n	8000620 <parse_to_func+0x134>
 			{
-				*(parce->str2) = '\0';
+				*(parse->str2) = '\0';
  8000552:	683b      	ldr	r3, [r7, #0]
  8000554:	685b      	ldr	r3, [r3, #4]
  8000556:	2200      	movs	r2, #0
  8000558:	701a      	strb	r2, [r3, #0]
-				parce->flag = 0;
+				parse->flag = 0;
  800055a:	683b      	ldr	r3, [r7, #0]
  800055c:	2200      	movs	r2, #0
  800055e:	731a      	strb	r2, [r3, #12]
@@ -496,14 +496,14 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  8000562:	73bb      	strb	r3, [r7, #14]
  8000564:	e03a      	b.n	80005dc <parse_to_func+0xf0>
 				{
-					parce->point = &command_name[i];
+					parse->point = &command_name[i];
  8000566:	7bbb      	ldrb	r3, [r7, #14]
  8000568:	00db      	lsls	r3, r3, #3
  800056a:	4a37      	ldr	r2, [pc, #220]	; (8000648 <parse_to_func+0x15c>)
  800056c:	441a      	add	r2, r3
  800056e:	683b      	ldr	r3, [r7, #0]
  8000570:	621a      	str	r2, [r3, #32]
-					if ((parce->str3 = strstr(parce->str1, parce->point->name)) != NULL)
+					if ((parse->str3 = strstr(parse->str1, parse->point->name)) != NULL)
  8000572:	683b      	ldr	r3, [r7, #0]
  8000574:	681a      	ldr	r2, [r3, #0]
  8000576:	683b      	ldr	r3, [r7, #0]
@@ -520,7 +520,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  800058e:	2b00      	cmp	r3, #0
  8000590:	d021      	beq.n	80005d6 <parse_to_func+0xea>
 					{
-						parce->ptr = (uint32_t)atoi(parce->str3 + strlen(parce->point->name) + 1);
+						parse->ptr = (uint32_t)atoi(parse->str3 + strlen(parse->point->name) + 1);
  8000592:	683b      	ldr	r3, [r7, #0]
  8000594:	689c      	ldr	r4, [r3, #8]
  8000596:	683b      	ldr	r3, [r7, #0]
@@ -537,14 +537,14 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  80005b0:	461a      	mov	r2, r3
  80005b2:	683b      	ldr	r3, [r7, #0]
  80005b4:	611a      	str	r2, [r3, #16]
-						if (parce->point->p_func != NULL)
+						if (parse->point->p_func != NULL)
  80005b6:	683b      	ldr	r3, [r7, #0]
  80005b8:	6a1b      	ldr	r3, [r3, #32]
  80005ba:	685b      	ldr	r3, [r3, #4]
  80005bc:	2b00      	cmp	r3, #0
  80005be:	d006      	beq.n	80005ce <parse_to_func+0xe2>
 						{
-						  parce->point->p_func(parce->ptr);
+						  parse->point->p_func(parse->ptr);
  80005c0:	683b      	ldr	r3, [r7, #0]
  80005c2:	6a1b      	ldr	r3, [r3, #32]
  80005c4:	685b      	ldr	r3, [r3, #4]
@@ -553,7 +553,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  80005ca:	4610      	mov	r0, r2
  80005cc:	4798      	blx	r3
 						}
-						parce->flag = 1;
+						parse->flag = 1;
  80005ce:	683b      	ldr	r3, [r7, #0]
  80005d0:	2201      	movs	r2, #1
  80005d2:	731a      	strb	r2, [r3, #12]
@@ -584,7 +584,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  80005fa:	4910      	ldr	r1, [pc, #64]	; (800063c <parse_to_func+0x150>)
  80005fc:	6878      	ldr	r0, [r7, #4]
  80005fe:	f003 feb3 	bl	8004368 <HAL_UART_Receive_IT>
-				if (parce->flag == 1)
+				if (parse->flag == 1)
  8000602:	683b      	ldr	r3, [r7, #0]
  8000604:	7b1b      	ldrb	r3, [r3, #12]
  8000606:	2b01      	cmp	r3, #1
@@ -604,7 +604,7 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
  8000618:	490d      	ldr	r1, [pc, #52]	; (8000650 <parse_to_func+0x164>)
  800061a:	6878      	ldr	r0, [r7, #4]
  800061c:	f003 fe20 	bl	8004260 <HAL_UART_Transmit_IT>
-	for (uint8_t idx = 0; idx < parce->Processed_Rx_Bytes; idx++)
+	for (uint8_t idx = 0; idx < parse->Processed_Rx_Bytes; idx++)
  8000620:	7bfb      	ldrb	r3, [r7, #15]
  8000622:	3301      	adds	r3, #1
  8000624:	73fb      	strb	r3, [r7, #15]
@@ -734,16 +734,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  parce_t parce;
-  parce.next_byte = 0;
+  parse_t parse;
+  parse.next_byte = 0;
  80006da:	2300      	movs	r3, #0
  80006dc:	61bb      	str	r3, [r7, #24]
-  parce.Processed_Rx_Bytes = 0;
+  parse.Processed_Rx_Bytes = 0;
  80006de:	2300      	movs	r3, #0
  80006e0:	623b      	str	r3, [r7, #32]
   while (1)
   {
-	 parse_to_func(&huart1, &parce);
+	 parse_to_func(&huart1, &parse);
  80006e2:	1d3b      	adds	r3, r7, #4
  80006e4:	4619      	mov	r1, r3
  80006e6:	4803      	ldr	r0, [pc, #12]	; (80006f4 <main+0x54>)
