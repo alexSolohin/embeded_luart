@@ -32,7 +32,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+void	cmd1_led(uint32_t ptr);
+void	cmd2_led(uint32_t ptr);
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

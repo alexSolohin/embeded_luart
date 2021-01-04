@@ -13,6 +13,8 @@ C_SRCS += \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_gpio.c \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c \
+../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.c \
+../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c \
 ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c \
@@ -35,6 +37,8 @@ OBJS += \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.o \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_gpio.o \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.o \
+./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.o \
+./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.o \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.o \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.o \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.o \
@@ -57,6 +61,8 @@ C_DEPS += \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.d \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_gpio.d \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.d \
+./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.d \
+./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.d \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.d \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.d \
 ./Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.d \
@@ -89,6 +95,10 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_gpio.o: ../Drivers/STM32WBxx_HAL_
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_gpio.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.o: ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.o: ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.o: ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.o: ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32WB55xx -c -I../Core/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc -I../Drivers/STM32WBxx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32WBxx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.d" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.o: ../Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c
