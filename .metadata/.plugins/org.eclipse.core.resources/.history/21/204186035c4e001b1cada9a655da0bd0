@@ -48,7 +48,7 @@ uint32_t	led_on;
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-#define SLOW_PERIOD 50000
+#define SLOW_PERIOD = 50000
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

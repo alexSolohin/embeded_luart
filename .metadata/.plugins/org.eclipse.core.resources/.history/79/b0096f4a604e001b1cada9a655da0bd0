@@ -28,22 +28,16 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-typedef struct command_node_s comand_node_t;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-void	cmd1_led(uint32_t ptr);
-void	cmd2_led(uint32_t ptr);
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-typedef struct	command_node_s
-{
-	char		*name;
-	void		(*p_func)(uint32_t);
-}				comand_node_t;
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -56,8 +50,7 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
 uint32_t period = SLOW_PERIOD;
-const comand_node_t command_name[2] = 	{{"CMD1", cmd1_led},
-										{"CMD2", cmd2_led}};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -68,7 +61,11 @@ static void MX_USART1_UART_Init(void);
 static void MX_USB_PCD_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
-
+typedef struct
+{
+	char	*name;
+	void	(*p_func)(uint32_t);
+}			comand_node_t;
 
 typedef struct
 {
@@ -87,7 +84,8 @@ typedef struct
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
+void	parse_to_func(UART_HandleTypeDef *huart,
+					parce_t *parce)
 {
 	parce->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
 	parce->Processed_Rx_Bytes = parce->Rx_Num_of_Bytes;
@@ -107,23 +105,23 @@ void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
 						parce->ptr = (uint32_t)atoi(parce->str3 + strlen(parce->point->name) + 1);
 						if (parce->point->p_func != NULL)
 						{
-						  parce->point->p_func(parce->ptr);
+						  parce->point->p_func(ptr);
 						}
 						parce->flag = 1;
 						break ;
 					}
 				}
 				memset(str, 0x00, sizeof(str));
-				HAL_UART_DeInit(huart);
-				HAL_UART_Init(huart);
-				HAL_UART_Receive_IT(huart, (uint8_t*)str, sizeof(str) - 1);
+				HAL_UART_DeInit(&huart);
+				HAL_UART_Init(&huart);
+				HAL_UART_Receive_IT(&huart, str, sizeof(str) - 1);
 				if (parce->flag == 1)
 				{
-				  HAL_UART_Transmit_IT(huart, (uint8_t*)"Ok\n", strlen("Ok\n"));
+				  HAL_UART_Transmit_IT(&huart, "Ok\n", strlen("Ok\n"));
 				}
 				else
 				{
-				  HAL_UART_Transmit_IT(huart, (uint8_t*)"No command\n", strlen("No command\n"));
+				  HAL_UART_Transmit_IT(&huart, "No command\n", strlen("No command\n"));
 				}
 			}
 		}
@@ -177,18 +175,19 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
-//  HAL_UART_Transmit_IT(&hlpuart1, "asd\n", strlen("asd\n"));
-  HAL_UART_Receive_IT(&huart1, (uint8_t*)str, strlen(str) - 1);
+  HAL_UART_Transmit_IT(&hlpuart1, "asd\n", strlen("asd\n"));
+  HAL_UART_Receive_IT(&hlpuart1, str, strlen(str) - 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   parce_t parce;
+  const comand_node_t command_name[2] = {{"CMD1", cmd1_led}, {"CMD2", cmd2_led}};
   parce.next_byte = 0;
   parce.Processed_Rx_Bytes = 0;
   while (1)
   {
-	 parse_to_func(&huart1, &parce);
+	  parce_to_func(&hpluart1, &parce);
 
     /* USER CODE END WHILE */
 
@@ -507,7 +506,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   /* Prevent unused argument(s) compilation warning */
 	HAL_UART_DeInit(&huart1);
 	HAL_UART_Init(&huart1);
-	HAL_UART_Receive_IT(&huart1, (uint8_t*)str, sizeof(str) - 1);
+	HAL_UART_Receive_IT(&huart1, str, sizeof(str) - 1);
   UNUSED(huart1);
 
   /* NOTE : This function should not be modified, when the callback is needed,

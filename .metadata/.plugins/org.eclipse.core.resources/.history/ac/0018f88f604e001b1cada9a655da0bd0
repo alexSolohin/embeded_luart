@@ -44,6 +44,8 @@ extern "C" {
 /* USER CODE BEGIN EC */
 char 		str[100];
 uint32_t	led_on;
+const		comand_node_t command_name[2] = {{"CMD1", cmd1_led},
+											{"CMD2", cmd2_led}};
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

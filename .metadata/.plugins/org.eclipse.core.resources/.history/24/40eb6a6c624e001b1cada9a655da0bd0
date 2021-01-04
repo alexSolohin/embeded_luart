@@ -56,8 +56,7 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
 uint32_t period = SLOW_PERIOD;
-const comand_node_t command_name[2] = 	{{"CMD1", cmd1_led},
-										{"CMD2", cmd2_led}};
+const comand_node_t command_name[2] = {{"CMD1", cmd1_led}, {"CMD2", cmd2_led}};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,7 +86,8 @@ typedef struct
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void	parse_to_func(UART_HandleTypeDef *huart, parce_t *parce)
+void	parse_to_func(UART_HandleTypeDef *huart,
+					parce_t *parce)
 {
 	parce->Rx_Num_of_Bytes = huart->RxXferSize - huart->RxXferCount;
 	parce->Processed_Rx_Bytes = parce->Rx_Num_of_Bytes;
@@ -184,11 +184,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   parce_t parce;
+
   parce.next_byte = 0;
   parce.Processed_Rx_Bytes = 0;
   while (1)
   {
-	 parse_to_func(&huart1, &parce);
+	  parse_to_func(&huart1, &parce);
 
     /* USER CODE END WHILE */
 
